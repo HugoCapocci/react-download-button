@@ -1,0 +1,53 @@
+{
+  "name": "react-download-button",
+  "version": "1.0.0",
+  "description": "A button to allow to download file without href link",
+  "main": "dist/index.js",
+  "es6": "src/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Hugo Capocci",
+    "email": "h.capocci@gmail.com"
+  },
+  "jest": {
+    "bail": true,
+    "verbose": true,
+    "collectCoverage": false,
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "setupTestFrameworkScriptFile": "./test/enzymeSetup.js"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-flow": "6.23.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "base64-arraybuffer": "0.1.5",
+    "codecov": "3.0.4",
+    "enzyme": "3.4.4",
+    "enzyme-adapter-react-16": "1.2.0",
+    "flow-bin": "0.79.1",
+    "jest": "23.5.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "webpack": "4.17.1",
+    "webpack-bundle-analyzer": "2.13.1",
+    "webpack-cli": "3.1.0"
+  },
+  "scripts": {
+    "flow": "flow",
+    "prepublish": "yarn flow && yarn test && yarn build",
+    "test": "jest",
+    "build": "webpack ",
+    "build-analyse": "ANALYSE_BUNDLE=true webpack"
+  }
+}

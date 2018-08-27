@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.3-jessie
+    steps:
+      - checkout
+      - run:
+          name: install project
+          command: yarn
+      - run:
+          name: install codecov
+          command: sudo npm install -g codecov
+      - run:
+          name: test
+          command: yarn test

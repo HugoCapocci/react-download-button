@@ -5,7 +5,7 @@ import createFileContent from './create-file-content';
 export type DownloadData = {
   mime?: string,
   fileName?: string,
-  content?: string,
+  contentBase64?: string,
 };
 
 type Props = {
@@ -15,6 +15,7 @@ type Props = {
   className?: string,
   style?: Object,
   disabled?: boolean,
+  label?: string,
 };
 
 type State = {};
@@ -26,8 +27,9 @@ class DownloadButton extends React.Component<Props, State> {
     downloadData: {
       mime: '',
       fileName: '',
-      content: '',
+      contentBase64: '',
     },
+    label: 'Download!',
   };
 
   renderButton = ({
@@ -35,20 +37,22 @@ class DownloadButton extends React.Component<Props, State> {
     style,
     disabled,
     onClick,
+    label,
   }: Props) => {
     const defaultProps = {
       disabled,
       onClick,
     };
+
     return (
       <div>
         { this.props.children &&
-          this.props.children
+          React.Children.map(this.props.children, child =>
+            React.cloneElement(child, { onClick: this.props.onClick })
+          )
         }
         { !this.props.children &&
-          <button type="button" {...defaultProps}>
-            Download! 
-          </button>
+          <button type="button" {...defaultProps}>{ label }</button>
         }
         { this.renderDownloadFile() }
       </div>
@@ -57,13 +61,13 @@ class DownloadButton extends React.Component<Props, State> {
 
   renderDownloadFile = () => {
     if (Object.keys(this.props.downloadData).length === 0) return null;
-    const { fileName, mime, content } = this.props.downloadData;
+    const { fileName, mime, contentBase64 } = this.props.downloadData;
     if (fileName != null && !fileName.length) return null;
 
     return (
       <a
         download={fileName}
-        href={createFileContent(content, mime)}
+        href={createFileContent(contentBase64, mime)}
         style={{ display: 'none' }}
         ref={(downloadLink) => {
           //$FlowFixMe

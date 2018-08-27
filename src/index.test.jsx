@@ -37,7 +37,7 @@ describe('tests for <DownloadButton> container', () => {
     const downloadData = {
       mime: 'fakeMime',
       fileName: 'fakeFile',
-      content: 'fakeContent'
+      contentBase64: 'fakeContent'
     };
     const props = {
       ...defaultProps,

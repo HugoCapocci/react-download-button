@@ -1,5 +1,5 @@
 {
-  "name": "react-download-button",
+  "name": "reactdownloadbutton",
   "version": "1.0.0",
   "description": "A button to allow to download file without href link",
   "main": "dist/index.js",
@@ -9,6 +9,15 @@
     "name": "Hugo Capocci",
     "email": "h.capocci@gmail.com"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/HugoCapocci/react-download-button.git"
+  },
+  "keywords": [
+    "react",
+    "download",
+    "button"
+  ],
   "jest": {
     "bail": true,
     "collectCoverage": true,
@@ -48,7 +57,8 @@
   },
   "scripts": {
     "flow": "flow",
-    "prepublish": "yarn flow && yarn test && yarn build",
+    "prepublish:old": "yarn flow && yarn test",
+    "prepare": "yarn build",
     "test": "jest",
     "build": "webpack ",
     "build-analyse": "ANALYSE_BUNDLE=true webpack"

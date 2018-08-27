@@ -1,18 +1,11 @@
 // @flow
 import React from 'react';
-import base64 from 'base64-arraybuffer';
 import createFileContent from './create-file-content';
 
 export type DownloadData = {
   mime?: string,
   fileName?: string,
   content?: string,
-};
-
-const styles = {
-  button: {
-    marginLeft: '10px',
-  },
 };
 
 type Props = {
@@ -29,7 +22,6 @@ type State = {};
 class DownloadButton extends React.Component<Props, State> {
   state = {};
   static defaultProps = {
-    className: 'left-space',
     disabled: false,
     downloadData: {
       mime: '',
@@ -45,8 +37,6 @@ class DownloadButton extends React.Component<Props, State> {
     onClick,
   }: Props) => {
     const defaultProps = {
-      className,
-      style: { ...styles.button, ...style },
       disabled,
       onClick,
     };
@@ -68,7 +58,7 @@ class DownloadButton extends React.Component<Props, State> {
   renderDownloadFile = () => {
     if (Object.keys(this.props.downloadData).length === 0) return null;
     const { fileName, mime, content } = this.props.downloadData;
-    if (fileName && !fileName.length) return null;
+    if (fileName != null && !fileName.length) return null;
 
     return (
       <a

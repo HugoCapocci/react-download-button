@@ -11,7 +11,7 @@
   },
   "jest": {
     "bail": true,
-    "collectCoverage": false,
+    "collectCoverage": true,
     "verbose": true,
     "moduleFileExtensions": [
       "js",
@@ -51,7 +51,6 @@
     "prepublish": "yarn flow && yarn test && yarn build",
     "test": "jest",
     "build": "webpack ",
-    "build-analyse": "ANALYSE_BUNDLE=true webpack",
-    "report-coverage": "jest --coverage > coverage.lcov && codecov"
+    "build-analyse": "ANALYSE_BUNDLE=true webpack"
   }
 }

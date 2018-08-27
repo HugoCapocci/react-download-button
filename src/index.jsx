@@ -17,7 +17,7 @@ const styles = {
 
 type Props = {
   children?: React$Element<any>,
-  onClick?: Function,
+  onClick: Function,
   downloadData: DownloadData,
   className?: string,
   style?: Object,
@@ -71,15 +71,13 @@ class DownloadButton extends React.Component<Props, State> {
     if (fileName && !fileName.length) return null;
 
     return (
-      // eslint-disable-next-line jsx-a11y/anchor-has-content
       <a
         download={fileName}
         href={createFileContent(content, mime)}
         style={{ display: 'none' }}
         ref={(downloadLink) => {
-          if (downloadLink) {
-            downloadLink.click();
-          }
+          //$FlowFixMe
+          downloadLink.click();
         }}
       />
     );

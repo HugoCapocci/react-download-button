@@ -7,7 +7,7 @@ import DownloadButton from './index';
 
 const props = {
   storagePath: 'fakePath',
-  resetData: jest.fn(),
+  onClick: jest.fn(),
 };
 
 describe('tests for <DownloadButton> container', () => {

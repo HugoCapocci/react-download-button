@@ -13,4 +13,4 @@ jobs:
           command: sudo npm install -g codecov
       - run:
           name: test
-          command: yarn test
+          command: yarn test --coverage && codecov -t 5ffc174d-eba4-4d7f-a1bb-90c54e732a22

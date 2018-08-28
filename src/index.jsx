@@ -52,7 +52,11 @@ class DownloadButton extends React.Component<Props, State> {
           )
         }
         { !this.props.children &&
-          <button type="button" {...defaultProps}>{ label }</button>
+          <button type="button" {...defaultProps} onClick={(event) => {
+            if (this.props.disabled) return;
+            this.props.onClick(event);
+          }}
+          >{ label }</button>
         }
         { this.renderDownloadFile() }
       </div>

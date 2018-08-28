@@ -1,5 +1,5 @@
-REACT Download Button
-=====================
+REACT Download File Button
+==========================
 
 [![codecov](https://codecov.io/gh/HugoCapocci/react-download-button/branch/master/graph/badge.svg)](https://codecov.io/gh/HugoCapocci/react-download-button)
 
@@ -8,22 +8,22 @@ Installation
 ------------
 
 ```bash
-yarn add -D react-download-button
+yarn add -D react-dfb
 ```
 
 or
 
 ```bash
-npm i --save-dev react-download-button
+npm i --save-dev react-dfb
 ```
 
 Usage
 -----
 
 ```javascript
-import DownloadButton from 'react-download-button';
+import DownloadButton from 'react-dfb';
 // you can also import flow type if needed
-import type { DownloadData } from 'react-download-button';
+import type { DownloadData } from 'react-dfb';
 
 ```
 

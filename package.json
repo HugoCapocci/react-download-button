@@ -1,5 +1,5 @@
 {
-  "name": "reactdownloadbutton",
+  "name": "react-dfb",
   "version": "1.0.0",
   "description": "A button to allow to download file without href link",
   "main": "dist/index.js",
@@ -10,8 +10,8 @@
     "email": "h.capocci@gmail.com"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/HugoCapocci/react-download-button.git"
+    "type": "git",
+    "url": "https://github.com/HugoCapocci/react-download-button.git"
   },
   "keywords": [
     "react",

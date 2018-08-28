@@ -1,3 +1,5 @@
-src
 test
+coverage
 .circleci
+.flowconfig
+flow-typed

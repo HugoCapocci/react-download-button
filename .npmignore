@@ -1,5 +1,9 @@
 test
 coverage
+flow-typed
+src
+test
 .circleci
 .flowconfig
-flow-typed
+webpack.config.js
+yarn.lock

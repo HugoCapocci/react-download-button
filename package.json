@@ -1,9 +1,8 @@
 {
   "name": "react-dfb",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A button to allow to download file without href link",
-  "main": "dist/index.js",
-  "es6": "src/index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "author": {
     "name": "Hugo Capocci",
@@ -48,6 +47,7 @@
     "enzyme": "3.4.4",
     "enzyme-adapter-react-16": "1.2.0",
     "flow-bin": "0.79.1",
+    "flow-copy-source": "2.0.2",
     "jest": "23.5.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
@@ -58,9 +58,15 @@
   "scripts": {
     "flow": "flow",
     "prepublish:old": "yarn flow && yarn test",
-    "prepare": "yarn build",
+    "prepare": "webpack && yarn build-js && yarn build-flow",
     "test": "jest",
-    "build": "webpack ",
+    "build-js": "babel src -d lib --ignore *.test.jsx",
+    "build-flow": "flow-copy-source src lib -i *.test.*",
     "build-analyse": "ANALYSE_BUNDLE=true webpack"
-  }
+  },
+  "files": [
+    "README.md",
+    "dist/",
+    "lib/"
+  ]
 }

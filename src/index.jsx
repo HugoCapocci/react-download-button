@@ -18,7 +18,7 @@ type Props = {
   label?: string,
 };
 
-class DownloadButton extends React.Component<Props> {
+class DownloadButton extends React.PureComponent<Props> {
   static defaultProps = {
     disabled: false,
     downloadData: {

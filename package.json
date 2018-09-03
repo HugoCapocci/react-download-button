@@ -1,6 +1,6 @@
 {
   "name": "react-dfb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A button to allow to download file without href link",
   "main": "lib/index.js",
   "license": "MIT",

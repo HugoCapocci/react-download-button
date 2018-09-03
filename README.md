@@ -69,8 +69,6 @@ Simple use case
 2. When file content has been retrieved, update downloadData and set type mime, file name and content
 File will automatically be proposed to download
 
-Note: you may have to reset downloadData attributes to avoid unexpected automatic downloads
-
 How it works
 ------------
 

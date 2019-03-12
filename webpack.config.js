@@ -30,8 +30,8 @@ module.exports = () => ({
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         query: {
-          presets: ["env", "stage-0", "react",  "flow"],
-          plugins: []
+          presets: ["@babel/env", "@babel/react",  "@babel/flow"],
+          plugins: ["@babel/plugin-proposal-class-properties"]
         }
       },
     ]

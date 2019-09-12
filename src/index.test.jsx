@@ -72,5 +72,4 @@ describe('tests for <DownloadButton> container', () => {
     component.find('button').simulate('click');
     expect(defaultProps.onClick).not.toBeCalled();
   });
-
 });

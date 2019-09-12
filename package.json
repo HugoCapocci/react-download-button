@@ -17,21 +17,6 @@
     "download",
     "button"
   ],
-  "jest": {
-    "bail": true,
-    "collectCoverage": true,
-    "verbose": true,
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "coveragePathIgnorePatterns": [
-      "test"
-    ],
-    "setupFilesAfterEnv": [
-      "./test/enzymeSetup.js"
-    ]
-  },
   "peerDependencies": {
     "react": "~16.0.0",
     "react-dom": "~16.0.0"
@@ -46,6 +31,10 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@stryker-mutator/core": "^2.1.0",
+    "@stryker-mutator/html-reporter": "^2.1.0",
+    "@stryker-mutator/javascript-mutator": "^2.1.0",
+    "@stryker-mutator/jest-runner": "^2.1.0",
     "babel-loader": "8.0.5",
     "codecov": "3.2.0",
     "enzyme": "3.9.0",
@@ -64,6 +53,7 @@
     "prepublish:old": "yarn flow && yarn test",
     "prepare": "webpack && yarn build-js && yarn build-flow",
     "test": "jest",
+    "test:mutation": "stryker run",
     "build-js": "babel src -d lib --ignore *.test.jsx",
     "build-flow": "flow-copy-source src lib -i *.test.*",
     "build-analyse": "ANALYSE_BUNDLE=true webpack"
@@ -72,5 +62,9 @@
     "README.md",
     "dist/",
     "lib/"
-  ]
+  ],
+  "resolutions": {
+    "js-yaml": "^3.13.1",
+    "set-value": "^3.0.1"
+  }
 }

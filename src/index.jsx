@@ -61,7 +61,7 @@ class DownloadButton extends React.PureComponent<Props> {
   }
 
   renderDownloadFile = () => {
-    if (Object.keys(this.props.downloadData).length === 0) return null;
+    if (!this.props.downloadData || Object.keys(this.props.downloadData).length === 0) return null;
     const { fileName, mime, contentBase64 } = this.props.downloadData;
     if (fileName != null && !fileName.length) return null;
 
@@ -71,7 +71,7 @@ class DownloadButton extends React.PureComponent<Props> {
         href={createFileContent(contentBase64, mime)}
         style={{ display: 'none' }}
         ref={(downloadLink) => {
-          //$FlowFixMe
+          // $FlowFixMe
           downloadLink.click();
         }}
       />
@@ -80,7 +80,7 @@ class DownloadButton extends React.PureComponent<Props> {
 
   render() {
     return (
-      <div className="flex" style={{ display: 'inline-flex' }}>
+      <div style={{ display: 'inline-flex' }}>
         { this.renderButton(this.props) }
       </div>
     );

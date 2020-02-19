@@ -36,7 +36,7 @@
     "@stryker-mutator/javascript-mutator": "^2.1.0",
     "@stryker-mutator/jest-runner": "^2.1.0",
     "babel-loader": "8.0.5",
-    "codecov": "3.2.0",
+    "codecov": "3.6.5",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
     "flow-bin": "0.79.1",

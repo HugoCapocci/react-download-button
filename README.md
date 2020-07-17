@@ -75,4 +75,4 @@ How it works
 The idea of this component is to create a http &lt;a&gt; tag, with a [download](https://www.w3schools.com/tags/att_a_download.asp) attribute and simulate a click on it.
 Using [URL.createObjectURL()](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) function, a file content can be transformed into a link  an put into the href of this &lt;a&gt; tag.
 
-This implementation require that the service retrieving your file content return it base-64 encoded. Ideally, it should have the same parameters as the DonwloadData type
+This implementation require that the service retrieving your file content return it base-64 encoded. Ideally, it should have the same parameters as the DownloadData type
